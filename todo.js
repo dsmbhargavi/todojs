@@ -1,4 +1,4 @@
-var taskList = [];
+let taskList = [];
 var check = [];
 var newList = [];
 var currDate = new Date();
@@ -130,9 +130,10 @@ function addTask(t) {
   // call a web api to update the database on the server
 
   var request = new XMLHttpRequest();
-  request.open("POST", "http:/127.0.0.1:5500/api/update/", true);
+  request.open("POST", "http://localhost:5000/api/update/", true);
   request.setRequestHeader("Content-Type", "application/json");
   request.send(JSON.stringify(newList));
+  //request.send(JSON.stringify(newList));
   
 
   render();
